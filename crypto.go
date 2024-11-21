@@ -10,6 +10,7 @@ import (
 	"crypto/ed25519"
 	"crypto/elliptic"
 	"crypto/hmac"
+	"crypto/md5"
 	"crypto/rand"
 	"crypto/rsa"
 	"crypto/sha1"
@@ -51,7 +52,10 @@ func sha1sum(input string) string {
 	hash := sha1.Sum([]byte(input))
 	return hex.EncodeToString(hash[:])
 }
-
+func md5sum(input string) string {
+	hash := md5.Sum([]byte(input))
+	return hex.EncodeToString(hash[:])
+}
 func adler32sum(input string) string {
 	hash := adler32.Checksum([]byte(input))
 	return fmt.Sprintf("%d", hash)
