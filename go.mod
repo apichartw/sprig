@@ -1,6 +1,6 @@
 module github.com/apichartw/sprig/v3
 
-go 1.22.2
+go 1.23.3
 
 require (
 	dario.cat/mergo v1.0.1
